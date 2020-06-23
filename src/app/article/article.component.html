@@ -1,0 +1,23 @@
+<div class="article-preview">
+  <div class="article-meta">
+    <!---要將user name傳到router上 方式 : 使用雙花刮--->
+    <!-- <a routerLink="/profile/{{article.author.username}}"><img [src]="article.author.image" /></a> -->
+
+    <div (click)="gotoProfile(article.author.username)" routerLink="/profile/{{article.author.username}}"><img
+        [src]="article.author.image" /></div>
+
+    <div class="info">
+      <!---要將user name傳到router上 方式 : 用陣列--->
+      <a [routerLink]="['/profile' ,article.author.username]" class="author">{{article.author.username}}</a>
+      <span class="date">{{article.updatedAt | date: 'yyy MM dd'}}</span>
+    </div>
+    <button class="btn btn-outline-primary btn-sm pull-xs-right" (click)=likeAction(article)>
+      <i class="ion-heart"></i> {{article.favoritesCount}}
+    </button>
+  </div>
+  <a href="" class="preview-link">
+    <h1>{{article.title}}</h1>
+    <p>{{article.description}}</p>
+    <span>Read more...</span>
+  </a>
+</div>

@@ -1,0 +1,9 @@
+<p>paginator works!</p>
+{{ totalCount }}
+
+<ul>
+  <li *ngFor="let page of pages; let idx = index" (click)="setPage(idx)">
+    {{idx + 1}}
+
+  </li>
+</ul>

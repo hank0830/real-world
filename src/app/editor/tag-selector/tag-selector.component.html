@@ -1,0 +1,11 @@
+<fieldset class="form-group">
+  <input type="text" class="form-control" placeholder="Enter tags" [formControl]="tag" (keyup.enter)="addtag()">
+  <div class="tag-list">
+    <ul>
+      <li *ngFor="let tagControl of tagList.controls ; let idx=index">
+        <input type="text" [formControl]="tagControl">
+        <button type="button" (click)="remove(idx)">X</button>
+      </li>
+    </ul>
+  </div>
+</fieldset>
